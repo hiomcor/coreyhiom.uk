@@ -1,0 +1,294 @@
+$white: #FFFFFF
+$black: #1e1e1e
+
+$dblue: #0098d2
+$blue: 	#56caf6
+$primary: #ecf3f3
+$lblue: #adf0ff
+$orange: #ff6d52
+$peach: #ff9b82
+
+\:root
+    font-size: 10px
+a
+    text-decoration: none
+    color: $black
+    letter-spacing: .5px
+h1,h2,h3,h4
+    font-size: 35px
+    margin: 0
+p
+    font-size: 20px
+    font-family: "soleil",sans-serif
+input
+    outline: none
+    border: none
+    font-family: 'Montserrat', sans-serif
+    // font-family: "soleil",sans-serif
+button
+    border: none
+    outline: none
+    font-family: 'Montserrat', sans-serif
+    // font-family: "soleil",sans-serif
+    font-weight: 500
+
+body
+    width: 100%
+    background-color: $primary
+    font-family: 'Montserrat', sans-serif
+    // font-family: "soleil",sans-serif
+    margin: 0
+    text-rendering: optimizeLegibility
+    overflow-x: hidden
+
+.flx
+    display: flex
+.cc
+    justify-content: center
+    align-items: center
+.sp
+    justify-content: space-between
+.a-start
+    align-items: flex-start
+.a-end
+    align-items: flex-end
+.j-end
+    justify-content: flex-end
+.j-start
+    justify-content: flex-start
+.flx-col
+    flex-direction: column
+
+.crsr
+    cursor: pointer
+    cursor: hand
+
+.container
+    width: 1200px
+.br
+    width: 100%
+    height: 150px
+    background-color: $primary
+.header
+    width: 100%
+    height: 500px
+    background-color: $primary
+    .container
+        .header-left
+            max-width: 800px
+            h1
+                margin-left: 50px
+                font-size: 50px
+                font-weight: 800
+                font-kerning: normal
+                line-height: 70px
+                word-spacing: 6px
+                color: $black
+.message
+    content: ""
+    position: absolute
+    top: 0
+    width: 100%
+    height: 100%
+    // image-rendering: -moz-crisp-edges         /* Firefox */
+    // image-rendering:   -o-crisp-edges         /* Opera */
+    image-rendering: -webkit-optimize-contrast /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges
+    // -ms-interpolation-mode: nearest-neighbor  /* IE (non-standard property) */
+    -webkit-filter: drop-shadow( 0px 5px 10px rgba(0, 0, 0, 0.4))
+    filter: drop-shadow( 0 5px 10px rgba(0, 0, 0, 0.4))
+.image-float
+    width: 40rem
+    height: 100%
+    background-color: $orange
+.item
+    width: 100%
+    height: 75rem
+    background-color: $primary
+    position: relative
+    .container
+        width: 110rem
+        height: 100%
+        -webkit-filter: drop-shadow( 0px 5px 10px rgba(0, 0, 0, 0.4))
+        filter: drop-shadow( 0 5px 10px rgba(0, 0, 0, 0.4))
+        .image-trav
+            @extend .image-float
+        .image-trav::before
+            @extend .message
+            left: 30rem
+            background:
+                image: url(../Screenshots/joy.jpg)
+                size: 50rem
+                repeat: no-repeat
+                position: 50% 50%
+        .image-tech
+            @extend .image-float
+        .image-tech::before
+            @extend .message
+            right: 30rem
+            background:
+                image: url(../Screenshots/techco.jpg)
+                size: 50rem
+                repeat: no-repeat
+                position: 50% 50%
+        .image-letter
+            @extend .image-float
+        .image-letter::before
+            @extend .message
+            right: 30rem
+            background:
+                image: url(../Screenshots/letterboxd.jpg)
+                size: 50rem
+                repeat: no-repeat
+                position: 50% 50%
+        .image-job
+            @extend .image-float
+        .image-job::before
+            @extend .message
+            left: 30rem
+            background:
+                image: url(../Screenshots/job.jpg)
+                size: 50rem
+                repeat: no-repeat
+                position: 50% 50%
+
+
+        .text-container
+            background-color: $white
+            .text
+                width: 40rem
+                height: 65rem
+                margin: 5rem
+                h1
+                    margin-bottom: 3rem
+                    color: $black
+                    font-weight: 600
+                .hr
+                    height: 1px
+                    width: 40rem
+                    background-color: #999
+                p
+                    color: #000
+                .buttons
+                    margin-top: auto
+                    z-index: 5
+                    display: flex
+                    a
+                        padding: 1rem
+                        font-family: 'Montserrat', sans-serif
+                        font-size: 1.4rem
+                        font-weight: 500
+                        color: $white
+                        background-color: $orange
+                        transition: background-color .3s
+                    a:first-child
+                        margin-right: 20px
+                    a:hover
+                        background-color: $peach
+
+footer
+    width: 100%
+    height: 100px
+    background-color: #222
+    .container
+        align-items: center
+        .me
+            font-size: 11px
+            font-weight: 400
+            color: $white
+            span
+                color: $orange
+        .contact
+            font-size: 10px
+            color: $white
+            span
+                font-size: 11px
+                color: $orange
+        .icons
+            flex: none
+            i
+                margin-left: 15px
+                font-size: 25px
+                color: $white
+                transition: .2s
+            i:hover
+                color: $orange
+
+@media (max-width: 1310px)
+    .container
+        width: 100%
+        margin: 0 50px
+
+@media (max-width: 1200px)
+    \:root
+        font-size: 9px
+@media (max-width: 1120px)
+    \:root
+        font-size: 8px
+    .item
+        .container
+            .text-container
+                .text
+                    .buttons
+                        a
+
+                            font-size: 12px
+    .container
+        width: 100%
+        margin: 0 30px
+@media (max-width: 966px)
+    \:root
+        font-size: 7px
+    h1
+        font-size: 30px
+    p
+        font-size: 18px
+
+@media (max-width: 825px)
+    \:root
+        font-size: 6px
+    h1
+        font-size: 28px
+    p
+        font-size: 16px
+@media (max-width: 710px)
+    \:root
+        font-size: 5.5px
+    h1
+        font-size: 24px
+    p
+        font-size: 15px
+    .item
+        .container
+            .text-container
+                .text
+                    .buttons
+                        a
+
+                            font-size: 11px
+@media (max-width: 666px)
+    .container
+        width: 100%
+        margin: 0 80px
+    .item
+        .container
+            width: 100%
+            .text-container
+                width: 100%
+                .text
+                    width: 100%
+                    .hr
+                        width: 100%
+    .hide
+        display: none
+    .header
+        .container
+            .header-left
+                h1
+                    margin-left: 0px
+@media (max-width: 475px)
+    .container
+        width: 100%
+        margin: 0 30px
+    p
+        font-size: 14px

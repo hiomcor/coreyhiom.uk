@@ -1,0 +1,190 @@
+$prim: #999999
+$second: #666666
+$accent: #b3b3b3
+$white: #fefefe
+
+body
+    width: 100%
+    background-color: #f3f3f3
+    margin: 0
+    font-family: 'Poppins', sans-serif
+
+a
+    text-decoration: none
+    color: #000000
+h1,h2,h3,h4,h5
+    margin: 0
+
+.container
+    width: 1200px
+
+.outer
+    display: flex
+    justify-content: center
+
+.header
+    background:
+        color: $prim
+    height: 100px
+    .container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .logo
+            background:
+                image: url(../media/company-logo.png)
+                size: contain
+                repeat: no-repeat
+            height: 100px
+            width: 500px
+        .getintouch
+            width: 150px
+            height: 42px
+            background-color: #FFC017
+            font-weight: 500
+            font-size: 16px
+            display: flex
+            justify-content: center
+            border-radius: 21px
+            a
+                display: flex
+                align-self: center
+                margin: 0
+
+
+.nav-bar
+    height: 33px
+    background:
+        color: $second
+    .container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        a
+            margin: 0px 20px
+        .left-nav
+            a:nth-child(1)
+                margin: 0px 20px 0 0
+            .is-selected
+        .right-nav
+            a:last-child
+                margin: 0px 0 0 20px
+
+.hero
+    height: 600px
+    background-color: $white
+    .container
+        display: flex
+        justify-content: center
+        align-items: center
+        .intro
+            height: 500px
+            width: 800px
+            background-color: $prim
+            border-radius: 10px
+.quad
+    background-color: $prim
+    height: 800px
+    .container
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        .square
+            width: 450px
+            height: 350px
+            border-radius: 15px
+            background-color: $accent
+            margin: 25px
+        .square:last-child
+            background-color: red
+.compare
+    background-color: $white
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin: 50px 0
+        h1
+        p
+        a
+            text-decoration: underline
+            // THIS COULD BE A BOX INSTEAD
+.why
+    height: auto
+    background-color: $prim
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .why-header
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            margin: 50px 0
+            h1
+            p
+        .why-column
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            .text
+                width: 250px
+                height: 400px
+                background-color: red
+            .image
+                width: 350px
+                height: 400px
+                background-color: green
+        .why-row
+            width: 100%
+            background-color: $accent
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin: 50px 0
+            .tab
+                width: 20%
+                height: 200px
+                text-align: center
+                h1
+                p
+        .why-more
+            width: 200px
+            height: 50px
+            background-color: $second
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-bottom: 50px
+            p
+.fact
+    .container
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        margin: 50px 0
+        h1
+        p
+.callto
+    .container
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        margin: 50px 0
+        h1
+        p
+        .button
+            p
+        .number
+
+@media screen, (min-width: 1300px)
+    .container
+        width: calc(100%-100px)

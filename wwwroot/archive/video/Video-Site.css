@@ -1,0 +1,376 @@
+body {
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  background-color: #FCFAF9;
+  transition: 0.2s; }
+
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  color: #FCFAF9;
+  background-color: #48E5C2;
+  text-rendering: geometricPrecision;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 100;
+  transition: 0.2s; }
+  header .sidebar-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+    header .sidebar-header .burger-contain {
+      position: relative;
+      margin: 25px;
+      width: 40px;
+      height: 31px;
+      cursor: pointer;
+      cursor: hand; }
+      header .sidebar-header .burger-contain .burger1 {
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        top: 0;
+        z-index: 100;
+        background-color: #FCFAF9; }
+      header .sidebar-header .burger-contain .burger2 {
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        top: 13px;
+        z-index: 100;
+        background-color: #FCFAF9; }
+      header .sidebar-header .burger-contain .burger3 {
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        top: 26px;
+        z-index: 100;
+        background-color: #FCFAF9; }
+    header .sidebar-header .logo {
+      width: 72px;
+      height: 32px;
+      position: absolute;
+      left: 164px;
+      top: 24px;
+      background-image: url(../media/atto.svg);
+      background-repeat: no-repeat;
+      z-index: 100; }
+  header .searchbar {
+    margin: 0 350px;
+    width: 300px; }
+    header .searchbar .container-1 {
+      position: relative; }
+      header .searchbar .container-1 .icon {
+        position: absolute;
+        top: 5px;
+        left: 9px;
+        color: #666; }
+      header .searchbar .container-1 input#search {
+        height: 35px;
+        border: none;
+        width: 300px;
+        background-color: #FCFAF9;
+        padding-left: 32px;
+        border-radius: 5px; }
+      header .searchbar .container-1 input#search::-webkit-input-placeholder {
+        color: #666; }
+  header .dark-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 140px;
+    width: 35px;
+    height: 35px;
+    color: #FCFAF9;
+    border: 1px solid #FCFAF9;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 400;
+    transition: 0.1s;
+    cursor: pointer;
+    cursor: hand; }
+  header .dark-mode:hover {
+    color: #0A2C38;
+    border: 1px solid #DFFFDD;
+    background-color: #DFFFDD; }
+  header .sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 30px;
+    width: 100px;
+    height: 35px;
+    color: #FCFAF9;
+    border: 1px solid #FCFAF9;
+    border-radius: 5px;
+    font-weight: 400;
+    transition: 0.1s;
+    cursor: pointer;
+    cursor: hand; }
+  header .sign-in:hover {
+    color: #0A2C38;
+    border: 1px solid #DFFFDD;
+    background-color: #DFFFDD; }
+
+#sidebar {
+  font-weight: 400;
+  margin-top: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: calc(100% - 80px);
+  width: 350px;
+  background-color: #DFFFDD;
+  z-index: 511;
+  color: #0A2C38; }
+  #sidebar .main-tab {
+    flex-grow: 0;
+    padding-left: 140px;
+    margin: 20px 0 20px 0;
+    white-space: nowrap; }
+    #sidebar .main-tab ul {
+      line-height: 30px;
+      font-size: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      #sidebar .main-tab ul li {
+        cursor: pointer;
+        cursor: hand;
+        position: relative;}
+        #sidebar .main-tab ul li .icon {
+          font-size: 20px;
+          position: absolute;
+          left: -67px; }
+        #sidebar .main-tab ul li .icon1 {
+          font-size: 15px;
+          position: absolute;
+          left: -65px; }
+      #sidebar .main-tab ul li:hover {
+        color: #48E5C2; }
+      #sidebar .main-tab ul li a {
+        text-decoration: none;
+        color: inherit;}
+  #sidebar .hr {
+    margin: 10px 0;
+    width: 100%;
+    height: 1px;
+    background-color: #0A2C38; }
+  #sidebar .tab-title {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    padding-left: 15px; }
+  #sidebar .mid-tab {
+    flex-grow: 0;
+    padding-left: 140px;
+    margin: 15px 0 25px 0;
+    white-space: nowrap; }
+    #sidebar .mid-tab ul {
+      line-height: 30px;
+      font-size: 16px;
+      list-style: none;
+      text-decoration: none;
+      padding: 0;
+      margin: 0; }
+      #sidebar .mid-tab ul li {
+        cursor: pointer;
+        cursor: hand;
+        position: relative; }
+        #sidebar .mid-tab ul li .icon {
+          font-size: 20px;
+          position: absolute;
+          left: -67px; }
+        #sidebar .mid-tab ul li .icon1 {
+          font-size: 16px;
+          position: absolute;
+          left: -64px; }
+      #sidebar .mid-tab ul li:hover {
+        color: #48E5C2; }
+  #sidebar .sub-tab {
+    flex-shrink: 1;
+    overflow: hidden;
+    padding: 15px 0 15px 140px;
+    white-space: nowrap;
+    cursor: pointer;
+    cursor: hand; }
+    #sidebar .sub-tab ul {
+      font-size: 16px;
+      list-style: none;
+      text-decoration: none;
+      padding: 0;
+      margin: 0; }
+      #sidebar .sub-tab ul li {
+        line-height: 40px; }
+        #sidebar .sub-tab ul li .circle {
+          position: absolute;
+          margin-top: 6px;
+          left: 70px;
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+          background: linear-gradient(-45deg, orange, crimson); }
+        #sidebar .sub-tab ul li .circle2 {
+          position: absolute;
+          margin-top: 6px;
+          left: 70px;
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+          background: linear-gradient(-45deg, aqua, teal); }
+        #sidebar .sub-tab ul li .circle3 {
+          position: absolute;
+          margin-top: 6px;
+          left: 70px;
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+          background: linear-gradient(-45deg, hotpink, darkmagenta); }
+        #sidebar .sub-tab ul li .circle4 {
+          position: absolute;
+          margin-top: 6px;
+          left: 70px;
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+          background: linear-gradient(-45deg, chartreuse, green); }
+      #sidebar .sub-tab ul li:hover {
+        color: #48E5C2; }
+  #sidebar .footer-tab {
+    width: 210px;
+    position: absolute;
+    bottom: 0;
+    padding: 15px 0 15px 140px;
+    white-space: nowrap;
+    border-top: 1px solid #0A2C38;
+    background-color: #DFFFDD;
+    cursor: pointer;
+    cursor: hand; }
+    #sidebar .footer-tab ul {
+      font-size: 16px;
+      list-style: none;
+      text-decoration: none;
+      padding: 0;
+      margin: 0; }
+      #sidebar .footer-tab ul li {
+        position: relative;
+        line-height: 40px; }
+        #sidebar .footer-tab ul li .icon {
+          font-size: 30px;
+          position: absolute;
+          left: -70px; }
+      #sidebar .footer-tab ul li:hover {
+        color: #48E5C2; }
+
+.main {
+  max-width: 100%;
+  margin-top: 80px;
+  margin-left: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FCFAF9;
+  color: #0A2C38;
+  transition: 0.2s; }
+  .main .content {
+    max-width: 75vw;
+    display: flex;
+    flex-direction: column; }
+    .main .content .category {
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between; }
+      .main .content .category h1 {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: normal;
+        margin: 0 20px; }
+      .main .content .category p {
+        font-size: 18px;
+        margin: 0 80px; }
+    .main .content .vid-bar {
+      width: 100%;
+      height: 490px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden; }
+      .main .content .vid-bar .vids {
+        margin: 5px;
+        width: 240px;
+        height: 235px;
+        flex-basis: auto;
+        display: flex;
+        flex-direction: column; }
+        .main .content .vid-bar .vids .image1 {
+          width: 240px;
+          height: 135px;
+          background-image: url(http://lorempixel.com/240/135/nature/);
+          transition: 0.2s; }
+        .main .content .vid-bar .vids .image1:hover {
+          opacity: 0.6; }
+        .main .content .vid-bar .vids .image2 {
+          width: 240px;
+          height: 135px;
+          background-image: url(http://lorempixel.com/240/135/technics/);
+          transition: 0.2s; }
+        .main .content .vid-bar .vids .image2:hover {
+          opacity: 0.6; }
+        .main .content .vid-bar .vids .image3 {
+          width: 240px;
+          height: 135px;
+          background-image: url(http://lorempixel.com/240/135/city/);
+          transition: 0.2s; }
+        .main .content .vid-bar .vids .image3:hover {
+          opacity: 0.6; }
+        .main .content .vid-bar .vids .image4 {
+          width: 240px;
+          height: 135px;
+          background-image: url(http://lorempixel.com/240/135/sports/);
+          transition: 0.2s; }
+        .main .content .vid-bar .vids .image4:hover {
+          opacity: 0.6; }
+        .main .content .vid-bar .vids .desc-cont {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          position: relative; }
+          .main .content .vid-bar .vids .desc-cont .desc {
+            width: 320px;
+            height: 100px;
+            display: flex;
+            flex-direction: column; }
+            .main .content .vid-bar .vids .desc-cont .desc h1 {
+              font-size: 16px;
+              font-weight: 400; }
+            .main .content .vid-bar .vids .desc-cont .desc p {
+              font-size: 14px; }
+          .main .content .vid-bar .vids .desc-cont .views {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            color: #48E5C2;
+            font-weight: 600; }
+    .main .content .line {
+      width: 70vw;
+      height: 1px;
+      background-color: #fafafa; }
+
+/*# sourceMappingURL=home.css.map */

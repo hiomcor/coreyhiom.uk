@@ -1,0 +1,263 @@
+body{
+    font-size: 16px;
+    line-height: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    background: #fff;
+}
+
+header{
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    border-bottom: 1px solid #000;
+    position: fixed;
+    z-index: 2;
+}
+
+header .logo{
+    float: left;
+    margin-left: 0;
+    position: absolute;
+}
+
+.nav-bar{
+    height: 100%;
+    width: auto;
+    margin: 0 auto!important;
+    text-align: center;
+}
+
+.nav-bar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+}
+
+.nav-bar li{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 13px;
+    margin-right: 30px;
+    height: 100%;
+    line-height: 50px;
+}
+
+.nav-tools{
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0px 30px;
+    float: right;
+    margin-top: -36px;
+    padding-right: 30px;
+    height: 100%;
+    width: auto;
+    position: relative;
+}
+
+.nav-tools .sign-in{
+}
+
+.nav-tools .sign-in::before, .nav-tools .sign-in::after{
+    content: "";
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+    top: 3px;
+    height: 14px;
+    width: 1px;
+    border-left: 1px solid #d7d7d8;
+    display: inline-block;
+}
+
+.nav-tools svg{
+    top: 2px;
+    color: #000;
+    position: relative;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+.nav-tools svg:hover{
+    color: #999;
+    cursor: pointer;
+}
+
+.cart-box{
+    position: absolute;
+    top: 36px;
+    right: 0;
+    width: 300px;
+    height: auto;
+    background: #fff;
+    border: solid 1px #000;
+    border-width: 1px 0px 1px 1px;
+    padding: 20px;
+}
+
+.cart-item{
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #d8d8d8;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    height: 100%;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+}
+
+/* .cart-item:last-child{
+    border-bottom: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+} */
+
+.cart-item img{
+    width: 70px;
+    display: block;
+    float: left;
+}
+
+.item-data{
+    display: block;
+    float: left;
+    font-weight: 400;
+    margin-left: 10px;
+    color: #999;
+}
+
+.item-data span{
+    display: block;
+    margin-bottom: 3px;
+}
+
+.item-data .item-title{
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.item-price-remove{
+    float: right;
+    position: relative;
+    height: 100%;
+}
+
+.item-price-remove svg{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    color: #999;
+    -webkit-transition: .3s;
+}
+
+.item-price-remove svg:hover{
+    color: #000;
+    cursor: pointer;
+}
+
+.cart-total{
+    font-size: 14px;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.cart-delivery{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    font-weight: 400;
+}
+
+.checkout-btn{
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+footer{
+    width: 100%;
+    border-top: solid 1px #000;
+    text-align: center;
+    padding-top: 30px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 600px;
+    margin: auto;
+    padding: 30px;
+}
+
+footer li{
+    display: inline-block;
+    font-weight: 700;
+    margin-right: 30px;
+}
+
+footer .social-links svg{
+    color: #000;
+    fill: #000;
+}
+
+.banner{
+    height: 900px;
+    width: 100%;
+    background-image: url(https://staticpages.mngbcn.com/homes/images/ss18/he/junio/he_summeruk_06-06.jpg?imwidth=1920&imdensity=1);
+}
+
+.title{
+    width: 100%;
+}
+
+.container{
+    margin: 0 200px;
+}
+
+.pre-banner-container{
+    margin-top: 50px;
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.sub-menu-container{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 50px;
+    background: #fff;
+    border-bottom: 1px solid #000;
+    visibility: hidden;
+}
+
+.sub-menu-content{
+    max-width: 1366px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}

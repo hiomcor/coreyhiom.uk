@@ -1,0 +1,4 @@
+@inherits LayoutComponentBase
+@inject NavigationManager Navigation
+<a class="skip-link" href="@(Navigation.Uri.Split('#')[0] + "#main")">Skip to content</a>
+@Body

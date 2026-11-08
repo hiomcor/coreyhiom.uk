@@ -1,0 +1,367 @@
+$purewhite: #fbfbfb
+$white: #fbfbfb
+$offwhite: #f4f4f4
+$black: #122427
+$grey: #999
+$yellow: rgb(255,204,0)
+$sans: 'Poppins', sans-serif
+$serif: 'Droid Serif', serif
+
+=transition($args)
+  -webkit-transition: $args
+  -moz-transition:    $args
+  -ms-transition:     $args
+  -o-transition:      $args
+  transition:         $args
+
+html
+    font-size: 14px
+body
+    margin: 0
+    font-family: 'Poppins', sans-serif
+    font-weight: 500
+    text-rendering: optimizeLegibility
+    background-color: $purewhite
+    color: $black
+
+::selection
+    background: $yellow
+    color: $black
+
+h1,h2,h3,a
+    text-decoration: none
+    font-weight: 500
+    margin: 0
+    color: $black
+.container
+    width: 1200px
+    display: flex
+.container2
+    display: flex
+    width: calc(100% - 200px)
+.main
+    display: flex
+    justify-content: center
+    width: 100%
+.txtwht
+    color: $white
+.offwhite
+    background: $offwhite
+.col-6
+    width: 600px
+.section-title
+    font-weight: 300
+    color: $grey
+    margin-top: 100px
+    margin-bottom: 35px
+
+h1
+    font-family: 'Droid Serif', serif
+    font-size: 60px
+
+.logo
+    font-size: 24px
+    color: $black
+
+.box-button
+    width: 160px
+    margin-top: 20px
+    border: 3px solid transparent
+    border-image: linear-gradient(66deg, rgba(255,141,0,1) 0%, rgba(255,204,0,1) 100%)
+    border-image-slice: 1
+    background: transparent
+    display: inline-block
+    padding: 14px 0
+    text-align: center
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: 600
+    letter-spacing: 1px
+    +transition(all 300ms)
+    position: relative
+    &:hover
+        background: linear-gradient(66deg, rgba(255,141,0,0.4) 0%, rgba(255,204,0,0.4) 100%)
+    ::before
+        content: ''
+        position: absolute
+        opacity: 0
+        z-index: -100
+@media (max-width:700px)
+    .box-button
+        margin-bottom: 20px
+
+.header
+    height: 80px
+    background-color: $white
+    .container2
+        justify-content: space-between
+        align-items: center
+        h1
+            font-size: 26px
+            font-weight: 500
+            text-transform: uppercase
+            letter-spacing: 2px
+        nav
+            width: 80%
+            text-align: right
+            ul
+                list-style: none
+                padding: 0
+                margin: 0
+                display: inline-block
+                li
+                    float: left
+                    position: relative
+                    &:hover
+                        ul
+                            display: block
+                            li
+                                opacity: 1
+                    ul
+                        position: absolute
+                        width: 100%
+                        text-align: left
+                        top: 100%
+                        right: 100%
+                        left: 0
+                        color: $white
+                        box-sizing: border-box
+                        display: none
+                        li
+                            width: 100%
+                            box-sizing: border-box
+                            background: $black
+                            opacity: 0
+                            +transition(opacity 500ms)
+                            &:hover
+                                background: $grey
+            i
+                font-size: 18px
+                font-weight: 600
+.menu-level-1
+    text-transform: uppercase
+    font-size: 16px
+    font-weight: 500
+    font-variant: small-caps
+    letter-spacing: 1px
+    margin-left: 40px
+    height: 80px
+    display: flex
+    align-items: center
+
+.menu-level-2
+    font-weight: 500
+    padding: 5px 20px
+    color: $white
+    font-size: 14px
+    display: block
+
+.hero
+    width: 100%
+    height: 700px
+    background:
+        image: url(../../media/doghero.jpg)
+
+.dog-boxes
+    margin: 30px 0
+    .container
+        justify-content: space-between
+        flex-wrap: wrap
+        .image
+            width: 585px
+            height: 400px
+            display: flex
+            align-items: center
+        .text-container
+            font-weight: 400
+            padding-left: 80px
+            h2
+                font-size: 24px
+                font-weight: 400
+                letter-spacing: 2px
+                text-transform: uppercase
+        .dog-bg
+            background-color: $offwhite
+            background-image: url(../../media/dogbox.jpg)
+            background-repeat: no-repeat
+        .husky
+            background-image: url(../../media/husky.png)
+            background-repeat: no-repeat
+            background-position: bottom right
+        .wide-image
+            width: 1200px
+            min-height: 400px
+            margin: 30px 0 0 0
+            display: flex
+            align-items: center
+            background-image: url(../../media/pug-bed.png)
+            background-position: bottom right
+            background-repeat: no-repeat
+            max-width: 100%
+            .text-container
+                h1
+                    font-size: 46px
+                p
+                    font-size: 18px
+                    font-weight: 400
+                    color: $grey
+                    max-width: 500px
+.threenumbers
+    height: 250px
+    .container
+        justify-content: space-around
+        align-items: center
+        text-align: center
+        h1
+            text-align: center
+            font-size: 75px
+        p
+            text-transform: uppercase
+            font-size: 18px
+            font-weight: 400
+            letter-spacing: 1.5px
+            color: $grey
+        .br
+            height: 160px
+            width: 1px
+            background-color: $grey
+@media (max-width: 800px)
+    .threenumbers
+        .container
+            h1
+                font-size: 48px
+            p
+                font-size: 14px
+.adoptsenior
+    height: 750px
+    background-image: url(../../media/catpic.jpg)
+    font-size: 14px
+    color: $white
+    font-weight: 300
+    .container
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        h1
+            font-size: 60px
+        p
+            text-align: center
+        .box
+            color: $white
+.longest
+    height: 600px
+    .container
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        .slideshow
+            height: 400px
+            display: flex
+            align-items: center
+            background-color: $offwhite
+            .text
+                display: flex
+                flex-direction: column
+                width: auto
+            .image
+                width: 400px
+                display: flex
+                background-color: green
+                height: 100%
+.hero-box
+    height: 100%
+    width: 585px
+    display: flex
+    align-items: flex-end
+
+.hero-desc
+    width: 100%
+    padding: 30px
+    // background-color: rgba(255,255,255,0.5)
+    background: linear-gradient(66deg, rgba(255,141,0,0.4) 0%, rgba(255,204,0,0.4) 100%)
+    border: 3px solid transparent
+    border-image: linear-gradient(66deg, rgba(255,141,0,1) 0%, rgba(255,204,0,1) 100%)
+    border-image-slice: 1
+
+@media screen and (max-width: 1200px)
+    .container
+        width: 100%
+.news-slider
+    background-color: $offwhite
+    .container
+        flex-wrap: wrap
+        justify-content: center
+
+.news-box
+    height: 300px
+    background: $purewhite
+    margin: 20px 10px 0px 10px
+    display: flex
+    .news-text
+        width: 50%
+        height: 100%
+        padding: 30px
+        box-sizing: border-box
+        position: relative
+    .image
+        width: 50%
+        height: 100%
+        background: url(../../media/dogbox.jpg)
+        background-position: right
+        background-repeat: no-repeat
+        background-size: cover
+.news-date
+    font-size: 11px
+    color: $grey
+    font-weight: 400
+    letter-spacing: 1px
+.news-title
+    font-family: $serif
+    font-size: 22px
+.news-intro
+    font-size: 14px
+    font-weight: 300
+    color: $grey
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 5
+    -webkit-box-orient: vertical
+.news-link
+    font-size: 14px
+    color: $yellow
+    background: linear-gradient(300deg, rgba(255,141,0,1) 30%, rgba(255,204,0,1) 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    position: absolute
+    bottom: 30px
+    &::after
+        content: ' . . .'
+        background-color: $purewhite
+        -webkit-background-clip: text
+        -webkit-text-fill-color: $purewhite
+    &:hover::after
+        content: ' . . .'
+        background-color: rgba(255,141,0,1)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+@media screen and (max-width:700px)
+    nav
+        display: none
+    .news-intro
+        -webkit-line-clamp: 3
+        max-height: 68px
+    .news-box
+        flex-wrap: wrap
+        flex-direction: column-reverse
+        height: 440px
+        .news-text
+            width: 100%
+            height: 50%
+        .image
+            width: 100%
+            height: 50%
+    .dog-boxes
+        .container
+            .text-container
+                font-weight: 400
+                padding-left: 20px

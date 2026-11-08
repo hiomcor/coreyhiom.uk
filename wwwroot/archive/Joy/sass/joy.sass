@@ -1,0 +1,652 @@
+$white: #fefefe
+$black: rgba(58, 57, 57, 1)
+$alpha: rgba(58, 57, 57, .8)
+$shadow: 0rem .4rem 2rem rgba(34, 34, 34, .3)
+$hr: solid .03rem rgba(0, 0, 0, .1)
+$hrColor: rgba(0, 0, 0, .1)
+$hover: rgba(0,0,0,.08)
+
+\:root
+    font-size: 28px
+
+body
+    background-color: $white
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+    font-family: 'Maven Pro', sans-serif
+    text-rendering: optimizeLegibility
+    // -webkit-font-smoothing: antialiased !important
+
+a
+    text-decoration: none
+    color: #1e1e1e
+
+h1,h2,h3,h4,p,a
+    margin: 0
+    padding: 0
+    font-weight: 400
+    line-height: normal
+
+.crsr
+    cursor: pointer
+    cursor: hand
+
+.container
+    width: 1200px
+
+.filter
+    position: fixed
+    display: none
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background-color: transparentize(black, .2)
+    z-index: 100
+    a
+        color: $white
+        font-size: 40px
+        font-weight: 500
+        margin: 20px 0
+        padding: 0 20px
+        transition: .2s
+        box-shadow: 0 0 0 0 $white
+        -webkit-backface-visibility: hidden /* Chrome, Safari, Opera */
+        backface-visibility: hidden
+    a:hover
+        box-shadow: 6px 0 0 0 $white
+.flex
+    display: flex
+.fixed
+    position: fixed !important
+.absolute
+    position: absolute
+
+.hero
+    width: 100%
+    height: 800px
+    background:
+        image: url(../../media/heroJoy.jpg)
+        size: cover
+        position: 0% 30%
+    display: flex
+    flex-direction: column
+    align-items: center
+    .grad-bar
+        display: flex
+        justify-content: center
+        width: 100%
+        height: 250px
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0) 100%) /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0) 100%) /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(0,0,0,0.66) 0%,rgba(0,0,0,0) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        .container
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            color: $white
+            .header
+                width: 100%
+                height: 60px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .logo
+                    margin-left: 20px
+                    font-size: 23px
+                    font-weight: 500
+                    display: flex
+                    align-items: center
+                    img
+                        height: 30px
+                        margin-right: 10px
+                .nav
+                    display: flex
+                    a
+                        display: flex
+                        align-items: center
+                        height: 100%
+                        margin: 0 15px
+                        font-size: 16px
+                        font-weight: 500
+                        color: $white
+                        transition: .2s
+                        box-shadow: 0 0 0 0 $white
+                        -webkit-backface-visibility: hidden /* Chrome, Safari, Opera */
+                        backface-visibility: hidden
+
+                    a:hover,a:active,a:focus
+                        box-shadow: 0 2px 0 0 $white
+
+                .login
+                    display: flex
+                    align-items: center
+                    height: 100%
+                    margin-right: 20px
+                    font-size: 16px
+                    font-weight: 500
+                    box-shadow: 0 0 0 0 $white
+                    transition: .2s
+                    -webkit-backface-visibility: hidden /* Chrome, Safari, Opera */
+                    backface-visibility: hidden
+                .login:hover
+                    box-shadow: 0 2px 0 0 $white
+                // .burger
+                //     height: 25px
+                //     width: 30px
+                //     padding: 10px
+                //     display: none
+                //     flex-direction: column
+                //     justify-content: space-between
+                //     margin-right: 10px
+                //     z-index: 101
+                //     .line
+                //         width: 100%
+                //         height: 3px
+                //         background-color: $white
+            .hr
+                width: 100%
+                height: 1px
+                background-color: transparentize($white, .5)
+
+#toggle
+    display: none
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 30px
+    height: 25px
+    margin-right: 10px
+    z-index: 101
+    input
+        position: absolute
+        top: -6px
+        left: -7px
+        width: 130%
+        height: 130%
+        opacity: 0
+        z-index: 102
+        &:checked
+            + span
+                background: transparent
+                &:after
+                    transform-origin: 100%
+                    transform: rotate(45deg)
+
+                &:before
+                    transform-origin: 100%
+                    transform: rotate(-45deg)
+    span
+        position: absolute
+        width: 100%
+        height: 3px
+        background: #fff
+        margin-top: 11px
+        transition: all 0.1s
+        &:before,&:after
+            content: ""
+            position: absolute
+            width: 100%
+            height: 3px
+            background: #fff
+            top: -11px
+            transition: all 0.3s
+        &:after
+            top: 11px
+
+.boxey
+    display: flex
+    justify-content: center
+    align-items: center
+    // position: absolute
+    // top: 350px
+    // left: 50%
+    // transform: translatex(-50%)
+
+.latest
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    h1
+        font-size: 52px
+        margin: 30px 0 50px 0
+        color: $black
+    .latest-items
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        max-width: 1600px
+        .latest-item
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            width: 350px
+            height: 500px
+            margin: 0 10px 50px 10px
+            background-color: $white
+            box-shadow: $shadow
+            .image-container
+                .image
+                    width: 100%
+                    height: 250px
+                .img-desc
+                    margin: 10px 20px
+                    font-size: 14px
+                .line
+                    width: 310px
+                    height: 1px
+                    margin-left: 20px
+                    background-color: $hrColor
+            .bio
+                margin: 0 20px
+                font-size: 18px
+            .offer
+                display: flex
+                justify-content: center
+                align-content: center
+                width: 100%
+                height: 80px
+                color: $white
+                background-color: $black
+                transition: .2s
+                .text
+                    display: flex
+                    align-items: baseline
+                    font-size: 16px
+                    margin: 20px
+                    span
+                        font-size: 25px
+                        font-weight: 500
+            // .offer:hover
+            //     background-color: $alpha
+            .view-more
+                width: 100%
+                height: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 35px
+                font-weight: 400
+                color: $black
+                transition: background-color .2s
+                // background:
+                //     image: url(../../media/gothA.png)
+                //     size: cover
+                //     position: center
+            .view-more:hover
+                background-color: transparentize(black, .95)
+        .latest-item:hover
+            .offer
+                background-color: $alpha
+.florence
+    background:
+        image: url(../../media/florence.jpg)
+        size: cover
+        position: center
+.gorl
+    background:
+        image: url(../../media/gorl.jpg)
+        size: cover
+        position: center
+.marra
+    background:
+        image: url(../../media/marra.jpg)
+        size: cover
+        position: center
+
+footer
+    width: 100%
+    height: 100px
+    margin-top: 50px
+    background-color: #222
+    display: flex
+    justify-content: center
+    align-items: center
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        color: #999
+        span
+            font-size: 18px
+        .icons
+            flex: none
+            i
+                font-size: 20px
+                margin-left: 20px
+                transition: color .2s
+            i:hover
+                color: $white
+
+.ui-bar
+    width: 27rem
+    height: 2.5rem
+    margin-top: 100px
+    display: flex
+    flex-wrap: wrap
+    box-shadow: $shadow
+    .inputs
+        position: relative
+        left: 0
+        width: 22rem
+        height: 2.5rem
+        display: flex
+        background-color: $white
+        .location
+            width: 12rem
+            height: 2.5rem
+            display: flex
+            flex-direction: column
+            border-right: $hr
+            input
+                width: 10.2rem
+                border: none
+                font-size: .7rem
+                font-weight: 400
+                color: #3A3939
+                font-family: 'Maven Pro', sans-serif
+            input:hover
+                background-color: inherit
+            input:focus
+                background-color: inherit
+                border: none
+                outline: none
+            // input::placeholder
+
+        .location:hover
+            background-color: $hover
+
+        .arriving
+            width: 5rem
+            height: 2.5rem
+            border-right: $hr
+            background-color: $white
+        .arriving:hover
+            background-color: $hover
+
+        .leaving
+            width: 5rem
+            height: 2.5rem
+            background-color: $white
+        .leaving:hover
+            background-color: $hover
+
+    .search
+        width: 5rem
+        height: 2.5rem
+        background-color: rgba(58, 57, 57, 1)
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: background-color .3s
+
+        .search-text
+            font-size: .7rem
+            font-weight: 400
+            color: #fefefe
+    .search:hover
+        background:
+            color: rgba(58, 57, 57, .7)
+
+.input-title
+    margin: .45rem .25rem 0 1rem
+    font-size: .5rem
+    font-weight: 400
+    color: #888
+
+.input-main
+    position: relative
+    bottom: 0
+    margin: .2rem 0 .45rem 1rem
+    font-size: .7rem
+    font-weight: 400
+    color: #3A3939
+
+.ui-bar:hover
+    cursor: pointer
+    cursor: hand
+
+.drop-menu
+    position: relative
+    width: 27rem
+    height: 8rem
+    margin-top: .5rem
+    z-index: 5
+
+    .drop-location
+        position: absolute
+        display: none
+        width: 12rem
+        height: 10.2rem
+        background-color: #fefefe
+        box-shadow: $shadow
+        flex-direction: column
+        justify-content: space-between
+
+        #search-location-one
+            background:
+                image: url(../../media/paris.png)
+                position: center
+                size: cover
+        #search-location-two
+            background:
+                image: url(../../media/spain.png)
+                position: center
+                size: cover
+        #search-location-three
+            background:
+                image: url(../../media/scotland.png)
+                position: center
+                size: cover
+    .drop-arriving
+        position: absolute
+        display: none
+        margin-left: 9.5rem
+        width: 10rem
+        height: 8rem
+        background-color: #fefefe
+        box-shadow: $shadow
+
+    .drop-leaving
+        position: absolute
+        display: none
+        margin-left: 14.5rem
+        width: 10rem
+        height: 8rem
+        background-color: #fefefe
+        box-shadow: $shadow
+
+.calender
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .month
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 2.1rem
+        width: inherit
+        border-bottom: $hr
+        font-size: .7rem
+        font-weight: 300
+        color: #fefefe
+        background-color: #3A3939
+        i
+            font-size: .62rem
+            margin: 0 3.5rem
+            cursor: pointer
+
+    .days
+        display: flex
+        flex-direction: row
+        overflow: hidden
+        margin: .5rem .4rem
+        .days-column
+            display: flex
+            flex-direction: column
+            justify-content: center
+            ul
+                width: 100%
+                list-style: none
+                font-size: .6rem
+                padding: .25rem
+                text-align: center
+
+                li
+                    text-align: center
+                    width: .8rem
+
+                li:nth-child(1)
+                    font-size: .5rem
+                    font-weight: 700
+                    margin-bottom: .3rem
+                // li:nth-child(n+2):hover
+                //     background-color: #EFAB3B
+.calender-over
+    background-color: $hover
+    cursor: pointer
+    cursor: hand
+.calender-over:hover
+    background-color: rgba(0,0,0,.3)
+.calender-default
+    background-color: #fefefe
+    cursor: pointer
+    cursor: hand
+.calender-default:hover
+    background-color: #60B294
+    // border-radius: .5rem
+
+.search-location
+    width: 100%
+    height: 3.4rem
+    color: #3A3939
+    display: flex
+    justify-content: space-between
+    overflow: hidden
+    cursor: pointer
+    cursor: hand
+.search-location:hover
+    background-color: $hover
+.search-img
+    width: 5rem
+    height: 3.4rem
+    overflow: hidden
+    img
+        width: 5rem
+        height: 5rem
+        height: inherit
+
+.search-desc
+    width: 8.6rem
+    height: 3.4rem
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    margin: 0 .5rem
+    border: 2px solid black
+    h1
+        font-size: .5rem
+        margin: .3rem 0 0 0
+        font-weight: 500
+    p
+        font-size: .5rem
+        margin:  0 0 .3rem 0
+
+
+@media (max-width: 1300px)
+    .container
+        width: 100%
+        margin: 0 50px
+
+@media (max-width: 800px)
+    .container
+        width: 100%
+        margin: 0 30px
+    .hero
+        .grad-bar
+            .container
+                .header
+                    .nav
+                        a
+                            margin: 10px
+    \:root
+        font-size: 22px
+
+@media (max-width: 666px)
+    .hero
+        .grad-bar
+            .container
+                .header
+                    .nav
+                        a
+                            display: none
+                    .login
+                        display: none
+    .boxey
+        .box
+            width: 100%
+            height: 80px
+            margin: 0
+    #toggle
+        display: block
+    .ui-bar
+        width: 20rem
+        .inputs
+            width: 100%
+            .location
+                width: 10rem
+                input
+                    width: 8.8rem
+        .search
+            width: 100%
+            margin: 1rem 0
+    .drop-menu
+        width: 20rem
+        .drop-arriving
+            margin-left: 7.5rem
+        .drop-leaving
+            margin-left: 10rem
+@media (max-width: 460px)
+    .ui-bar
+        width: 16rem
+        margin-top: 55px
+        .inputs
+            display: flex
+            flex-wrap: wrap
+            .location
+                width: 100%
+                margin-bottom: 1rem
+                input
+                    width: 8.8rem
+            .arriving
+                width: 49.72%
+            .leaving
+                width: 50%
+        .search
+            width: 100%
+            margin: 4.5rem 0
+
+@media (max-width: 375px)
+    .ui-bar
+        width: 14rem
+        .inputs
+            .arriving
+                width: 49.5%
+            .leaving
+                width: 50%
+    .latest
+        .latest-items
+            .latest-item
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                width: 350px
+                height: 500px
+                margin: 0 0 50px 0

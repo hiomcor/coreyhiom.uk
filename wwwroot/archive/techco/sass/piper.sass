@@ -1,0 +1,702 @@
+$white: #EFF9F2
+$yellow: #f0e294
+$green1: #c0d294
+$green2: #90c294
+$green3: #60b294
+$green4: #30a294
+$grey1: #333
+$grey2: #888
+
+\:root
+    font-size: 8px
+
+h1,h2,h3,h4
+    font-size: 32px
+    font-weight: 500
+    margin: 0
+p,a
+    font-size: 20px
+    text-decoration: none
+input, select, textarea, button
+    font-family: inherit
+a
+    color: $white
+
+.flx-cc
+    display: flex
+    justify-content: center
+    align-items: center
+.crsr
+    cursor: pointer
+    cursor: hand
+.white
+    color: $white
+.gelb
+    color: $yellow
+.grn1
+    color: $green1
+.grn2
+    color: $green2
+.grn3
+    color: $green3
+.grn4
+    color: $green4
+.flex
+    display: flex !important
+.fixed
+    position: fixed !important
+
+body
+    background-color: $white
+    margin: 0
+    font-family: 'Quicksand', sans-serif
+    font-weight: 500
+    text-rendering: optimizeLegibility
+    overflow-x: hidden
+
+.container
+    width: 1000px
+
+.filter
+    width: 100%
+    height: 100%
+    position: fixed
+    background-color: $green4
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    z-index: 100
+    display: none
+    a
+        font-size: 35px
+        color: $yellow
+        margin: 25px 0
+        padding: 10px
+        border-radius: 5px
+        box-shadow: 0 0 0 3px $green4
+        transition: .2s
+        width: 200px
+
+    a:hover
+        box-shadow: 0 0 0 3px $yellow
+
+#toggle
+    display: none
+    position: absolute
+    top: 40px
+    right: 40px
+    width: 30px
+    height: 25px
+    margin-right: 10px
+    z-index: 101
+    input
+        position: absolute
+        top: -6px
+        left: -7px
+        width: 130%
+        height: 130%
+        opacity: 0
+        z-index: 102
+        &:checked
+            + span
+                background: transparent
+                &:after
+                    transform-origin: 100%
+                    transform: rotate(45deg)
+                    background-color: $yellow
+
+                &:before
+                    transform-origin: 100%
+                    transform: rotate(-45deg)
+                    background-color: $yellow
+    span
+        position: absolute
+        width: 100%
+        height: 4px
+        background: $white
+        margin-top: 11px
+        border-radius: 5px
+        transition: all 0.1s
+        &:before,&:after
+            content: ""
+            position: absolute
+            width: 100%
+            height: 4px
+            background: $white
+            border-radius: 5px
+            top: -11px
+            transition: all 0.3s
+        &:after
+            top: 11px
+
+.header-hero
+    width: 100%
+    height: 700px
+    background:
+        color: $green4
+        // image: url(../../media/landing-circle.svg)
+        repeat: no-repeat
+        position: center bottom
+        size: 900px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+
+    .container
+        height: 100px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-basis: auto
+        .logo
+            margin: 0 10px
+            h1
+                font-size: 40px
+                font-weight: 700
+            img
+                height: 100%
+        .nav
+            display: flex
+            align-items: center
+            color: $white
+            font-size: 20px
+            .nav-item
+                transition: .3s
+            .nav-item:hover
+                color: $yellow
+            .break
+                font-weight: 400
+                margin: 0 20px
+            .burger
+                width: 30px
+                height: 26px
+                display: none
+                flex-direction: column
+                justify-content: space-between
+                align-items: center
+                z-index: 101
+                .line
+                    width: 100%
+                    height: 4px
+                    border-radius: 5px
+                    background-color: $white
+                    transition: .3s
+            .burger:hover,.burger:active
+                .line
+                    background-color: $yellow
+    .main
+        max-width: 1000px
+        height: 600px
+        margin: 0 50px
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+        color: $white
+        text-align: center
+        .main-container
+            height: 100%
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            align-items: center
+            z-index: 1
+            h1
+                margin: 35px 0 0 0
+                font-size: 50px
+                font-weight: 500
+                span
+                    font-weight: 700
+            h2
+                width: calc(100% - 50px)
+                font-size: 28px
+                font-weight: 500
+            .button-container
+                display: flex
+                justify-content: center
+                margin: 0 0 50px 0
+                .button-buffer
+                    height: 65px
+                    margin: 0 25px
+                    .button
+                        width: 200px
+                        height: 60px
+                        border-radius: 12px
+                        font-size: 20px
+                        font-weight: 500
+                        color: $green4
+                        background-color: $yellow
+                        box-shadow: 10px 10px 10px 2px transparentize(black, .7)
+                        transition: .2s
+                .button-buffer:hover
+                    .button
+                        box-shadow: 4px 5px 5px 0px transparentize(black, .6)
+                        transform: translateY(5px)
+.header-hero:before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 250px
+    width: 100%
+    height: 100%
+    z-index: 0
+    opacity: 0.6
+    background-image: url(../../media/landing-circle.svg)
+    background-repeat: no-repeat
+    background-position: 50% 0
+    -ms-background-size: 900px
+    -o-background-size: 900px
+    -moz-background-size: 900px
+    -webkit-background-size: 900px
+    background-size: 900px
+
+.company-bar
+    width: 100%
+    height: 120px
+    background-color: $yellow
+    display: flex
+    justify-content: center
+    z-index: 2
+    .container
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .company-item
+            display: flex
+            align-items: baseline
+            transition: .3s
+            z-index: 5
+            img
+                max-width: 14rem
+                max-height: 6rem
+            .ama
+                transform: translateY(1rem)
+                max-width: 15rem
+            .nbc
+                transform: translateY(-.5rem)
+                max-height: 7.2rem
+            .hbo
+                max-height: 5rem
+
+        .company-item:hover
+            transform: rotate(10deg)
+
+.content1
+    .container
+        height: 700px
+        color: $grey1
+        .text
+            margin-left: 50px
+.content2
+    position: relative
+    .container
+        height: 700px
+        color: $grey1
+        flex-direction: row-reverse
+        .text
+            width: 600px
+            height: 600px
+            text-align: center
+            h1
+                font-size: 36px
+            p
+                font-size: 22px
+            .button
+                background-color: $green3
+                border-color: $green3
+                color: $white
+                align-self: center
+            .button:hover
+                box-shadow: 0px 0px 0px 10px $green2
+        .image
+            display: none
+
+.image
+    height: 550px
+    width: 500px
+    display: flex
+    z-index: 2
+    img
+        width: 400px
+        flex: none
+
+.text
+    height: 500px
+    width: 500px
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    z-index: 2
+    h1
+        margin: 10px 0
+    p
+        margin: 10px 0
+    .button
+        width: 196px
+        height: 56px
+        font-size: 18px
+        font-weight: 500
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: none
+        border-radius: 12px
+        border: 2px solid $green4
+        transition: .2s
+    .button:hover
+        color: $white
+        background-color: $green4
+
+.content2::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 0
+    opacity: 0.5
+    background-image: url(../../media/circle.svg)
+    background-repeat: no-repeat
+    background-position: center
+    -ms-background-size: 1200px
+    -o-background-size: 1200px
+    -moz-background-size: 1200px
+    -webkit-background-size: 1200px
+    background-size: 1200px
+
+.customer
+    width: 100%
+    height: 600px
+    background-color: $green3
+    color: $white
+    position: relative
+    .container
+        height: 500px
+        display: flex
+        justify-content: space-around
+        align-items: center
+        flex-direction: column
+        z-index: 1
+        h1
+            margin-top: 20px
+            font-size: 40px
+            text-align: center
+        p
+            // margin: 50px 0
+            text-align: center
+            font-size: 25px
+            font-weight: 400
+        .avatar-container
+            display: flex
+            flex-direction: column
+            align-items: center
+            .avatar
+                width: 100px
+                height: 100px
+                border-radius: 50px
+                background:
+                    color: $green2
+                    image: url(../../media/svgs/person.svg)
+                    size: cover
+            h1
+                font-size: 22px
+                font-weight: 500
+
+
+.customer::before
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    top: -100px
+    width: 100%
+    height: 100%
+    z-index: 0
+    opacity: 0.4
+    background-image: url(../../media/quotes.svg)
+    background-repeat: no-repeat
+    background-position: center
+    -ms-background-size: 300px
+    -o-background-size: 300px
+    -moz-background-size: 300px
+    -webkit-background-size: 300px
+    background-size: 300px
+
+.email-content
+    width: 100%
+    height: 350px
+    background-color: $green4
+    .container
+        height: 250px
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+        h1
+            text-align: center
+        p
+            text-align: center
+        .email
+            display: flex
+            flex-direction: row
+            justify-content: center
+            flex-wrap: wrap
+            .email-input
+                width: 296px
+                height: 60px
+                margin: 10px
+                padding: 20px
+                font-size: 20px
+                font-weight: 500
+                background-color: $green4
+                border-radius: 12px
+                border: 2px solid $white
+                transition: .2s
+            .email-input:focus, .email-input:hover
+                outline: none
+                background-color: transparentize(black, .9)
+            .email-input::placeholder
+                color: transparentize($white, .3)
+                font-weight: 500
+            button
+                width: 150px
+                height: 60px
+                margin: 10px
+                font-size: 20px
+                font-weight: 500
+                color: $green4
+                background-color: $yellow
+                border: none
+                border-radius: 12px
+                transition: .2s
+            button:hover
+                box-shadow: 10px 10px 0px 0px $green2
+
+footer
+    width: 100%
+    background-color: $grey1
+    display: flex
+    justify-content: center
+    .container
+        .links-container
+            margin: 50px 0
+            display: flex
+            justify-content: space-between
+            h1
+                font-size: 22px
+                margin: 10px 0
+            a
+                font-size: 16px
+                margin: 5px 0
+                color: $green4
+                transition: .2s
+            p
+                font-size: 18px
+            a:hover
+                color: $yellow
+            .links
+                display: flex
+                flex-direction: column
+            .support
+                margin: 0 50px
+            .contact
+                flex-shrink: 2
+                a
+                    color: $yellow
+        .hr
+            width: 100%
+            height: 2px
+            background-color: $grey2
+        .etc
+            width: 100%
+            margin: 25px 0 75px 0
+            color: $grey2
+            display: flex
+            justify-content: space-between
+            align-items: center
+            .copyright
+                font-size: 16px
+            .icons
+                font-size: 26px
+                display: flex
+                flex-wrap: nowrap
+                i
+                    margin-left: 20px
+                    transition: .2s
+                i:hover
+                    color: $yellow
+
+@media (max-width: 1100px)
+    .container
+        width: calc(100% - 100px)
+
+@media (max-width: 840px)
+    .image
+        display: none
+    .text
+        margin: 0 50px
+        text-align: center
+        .button
+            align-self: center
+    .header-hero
+        .main
+            .main-container
+                h1
+                    font-size: 45px
+                h2
+                    font-size: 24px
+@media (max-width: 750px)
+    .header-hero
+        .container
+            .nav
+                .nav-item
+                    font-size: 17px
+                .break
+                    margin: 0 10px
+
+    .header-hero
+        .main
+            .main-container
+                h1
+                    font-size: 45px
+                h2
+                    font-size: 22px
+    .customer
+        .container
+            height: 600px
+@media (max-width: 700px)
+    \:root
+        font-size: 7px
+    .content2
+        .container
+            .text
+                width: 500px
+                height: 500px
+                h1
+                    font-size: 32px
+                p
+                    font-size: 20px
+@media (max-width: 666px)
+    .container
+        width: calc(100% - 50px)
+@media (max-width: 600px)
+    .header-hero
+        .container
+            .nav
+                .nav-item,.break
+                    display: none
+                .burger
+                    display: flex
+    #toggle
+        display: block
+    .customer
+        .container
+            h1
+                font-size: 35px
+            p
+                font-size: 22px
+    .text
+        margin: 0 0
+    .email-content
+        .container
+            height: 300px
+    .content1
+        .container
+            .text
+                margin-left: 0px
+    .content2
+        .container
+            .text
+                margin-right: 0px
+    \:root
+        font-size: 6px
+    footer
+        .container
+            .links-container
+                .support
+                    margin: 0 30px
+@media (max-width: 520px)
+    .container
+        width: calc(100% - 30px)
+    .email-content
+        .container
+            height: 330px
+    .customer
+        .container
+            h1
+                font-size: 32px
+            p
+                font-size: 20px
+    .content1
+        .container
+            .text
+                p
+                    font-size: 18px
+    .content2
+        .container
+            .text
+                p
+                    font-size: 18px
+
+    footer
+        .container
+            .links-container
+                h1
+                    font-size: 20px
+                a,p
+                    font-size: 16px
+                .support
+                    margin: 0 20px
+    .header-hero
+        .main
+            .main-container
+                h1
+                    font-size: 36px
+                h2
+                    font-size: 20px
+                .button-container
+                    .button-buffer
+                        height: 65px
+                        margin: 0 10px
+                        .button
+                            width: 170px
+                            font-size: 18px
+@media (max-width: 390px)
+    \:root
+        font-size: 5px
+    .header-hero
+        .main
+            .main-container
+                h1
+                    font-size: 34px
+                h2
+                    font-size: 18px
+                .button-container
+                    .button-buffer
+                        height: 55px
+                        margin: 0 5px
+                        .button
+                            height: 50px
+                            width: 130px
+                            font-size: 15px
+    footer
+        .container
+            .links-container
+                .contact
+                    display: none
+    .customer
+        .container
+            h1
+                margin-top: 0
+@media (max-width: 390px)
+    .customer
+        .container
+            h1
+                font-size: 30px
+            p
+                font-size: 18px
