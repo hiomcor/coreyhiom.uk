@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <!-- Switch these to true when the content is ready to show. -->
+    <ShowCv>true</ShowCv>
+    <ShowCvDownload>false</ShowCvDownload>
+    <ShowSelectedWork>false</ShowSelectedWork>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ShowCv)' == 'true'">
+    <DefineConstants>$(DefineConstants);SHOW_CV</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ShowSelectedWork)' == 'true'">
+    <DefineConstants>$(DefineConstants);SHOW_SELECTED_WORK</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ShowCvDownload)' == 'true'">
+    <DefineConstants>$(DefineConstants);SHOW_CV_DOWNLOAD</DefineConstants>
+  </PropertyGroup>
+</Project>

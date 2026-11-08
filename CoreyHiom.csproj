@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <Import Project="SiteVisibility.props" />
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -12,10 +13,23 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.14" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(ShowCv)' != 'true'">
+    <RazorComponent Remove="Pages/Cv.razor" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(ShowCv)' != 'true' Or '$(ShowCvDownload)' != 'true'">
+    <Content Remove="wwwroot/files/Corey-Hiom-CV.pdf" />
+  </ItemGroup>
+
   <!-- Give static hosts real entry documents for direct page visits. -->
   <Target Name="ExportStaticPages" AfterTargets="Publish">
-    <MakeDir Directories="$(PublishDir)wwwroot/contact;$(PublishDir)wwwroot/cv" />
+    <MakeDir Directories="$(PublishDir)wwwroot/contact;$(PublishDir)wwwroot/about" />
     <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/contact/index.html" />
-    <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/cv/index.html" />
+    <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/about/index.html" />
+    <MakeDir Directories="$(PublishDir)wwwroot/cv" Condition="'$(ShowCv)' == 'true'" />
+    <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/cv/index.html" Condition="'$(ShowCv)' == 'true'" />
+    <!-- Remove stale public files when publishing over an earlier output. -->
+    <Delete Files="$(PublishDir)wwwroot/cv/index.html" Condition="'$(ShowCv)' != 'true'" />
+    <Delete Files="$(PublishDir)wwwroot/files/Corey-Hiom-CV.pdf" Condition="'$(ShowCv)' != 'true' Or '$(ShowCvDownload)' != 'true'" />
+    <RemoveDir Directories="$(PublishDir)wwwroot/cv" Condition="'$(ShowCv)' != 'true'" />
   </Target>
 </Project>

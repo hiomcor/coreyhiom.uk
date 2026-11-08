@@ -16,3 +16,7 @@ GitHub Pages can host the published output without a .NET server. Deployment and
 
 Keep future API access separate from UI components so components and content can move into a server-backed Blazor Web App later.
 The publish target exports contact/index.html so /contact/ loads directly on static hosts.
+
+## Content visibility
+
+SiteVisibility.props controls the CV page, PDF download, and selected-work section independently. The CV page is enabled. ShowCvDownload and ShowSelectedWork are false: download buttons, the published PDF, and selected work (Theatre Tokens, CMS editor, National Book Tokens) stay hidden. Source content is preserved for later review. These switches do not remove earlier GitHub history.
