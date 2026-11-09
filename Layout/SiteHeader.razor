@@ -5,18 +5,21 @@
     }
     else
     {
-        <a class="wordmark" href="./" aria-label="Corey Hiom — home">COREY HIOM</a>
+        <a class="wordmark" href="/" aria-label="Corey Hiom — home">COREY HIOM</a>
     }
     <div class="header-line">
         <span class="tagline">Development &amp; design</span>
         <nav aria-label="Main navigation">
-            <a href="./#projects">Projects</a>
-            <a href="about" aria-current="@(CurrentPage == "about" ? "page" : null)">About</a>
+            @if (SiteVisibility.ShowProjects)
+            {
+                <a href="/#projects">Projects</a>
+            }
+            <a href="/about/" aria-current="@(CurrentPage == "about" ? "page" : null)">About</a>
             @if (SiteVisibility.ShowCv)
             {
-                <a href="cv" aria-current="@(CurrentPage == "cv" ? "page" : null)">CV</a>
+                <a href="/cv/" aria-current="@(CurrentPage == "cv" ? "page" : null)">CV</a>
             }
-            <a href="contact" aria-current="@(CurrentPage == "contact" ? "page" : null)">Contact</a>
+            <a href="/contact/" aria-current="@(CurrentPage == "contact" ? "page" : null)">Contact</a>
         </nav>
     </div>
 </header>

@@ -2,7 +2,7 @@
 
 <footer class="site-footer">
     <div class="footer-inner">
-        <a href="./" class="footer-name">Corey Hiom</a>
+        <a href="/" class="footer-name">Corey Hiom</a>
         <div class="footer-links">
             <a href="mailto:contact@coreyhiom.uk">contact@coreyhiom.uk</a>
             <a class="footer-linkedin" href="https://www.linkedin.com/in/corey-hiom/" target="_blank" rel="noopener noreferrer">
@@ -10,6 +10,6 @@
                 <span>LinkedIn ↗<span class="visually-hidden"> (opens in a new tab)</span></span>
             </a>
         </div>
-        <a class="footer-top" href="@(Navigation.Uri.Split('#')[0] + "#top")">Back to top ↑</a>
+        <a class="footer-top" href="@(new Uri(Navigation.Uri).AbsolutePath + "#top")">Back to top ↑</a>
     </div>
 </footer>

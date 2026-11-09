@@ -4,6 +4,7 @@
     <ShowCv>true</ShowCv>
     <ShowCvDownload>false</ShowCvDownload>
     <ShowSelectedWork>false</ShowSelectedWork>
+    <ShowProjects>false</ShowProjects>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ShowCv)' == 'true'">
     <DefineConstants>$(DefineConstants);SHOW_CV</DefineConstants>
@@ -13,5 +14,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(ShowCvDownload)' == 'true'">
     <DefineConstants>$(DefineConstants);SHOW_CV_DOWNLOAD</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ShowProjects)' == 'true'">
+    <DefineConstants>$(DefineConstants);SHOW_PROJECTS</DefineConstants>
   </PropertyGroup>
 </Project>

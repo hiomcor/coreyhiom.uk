@@ -1,16 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <Import Project="SiteVisibility.props" />
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.14" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.14" PrivateAssets="all" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(ShowCv)' != 'true'">
@@ -20,16 +19,8 @@
     <Content Remove="wwwroot/files/Corey-Hiom-CV.pdf" />
   </ItemGroup>
 
-  <!-- Give static hosts real entry documents for direct page visits. -->
+  <!-- Render the Razor pages at build time. Only this wwwroot is deployed. -->
   <Target Name="ExportStaticPages" AfterTargets="Publish">
-    <MakeDir Directories="$(PublishDir)wwwroot/contact;$(PublishDir)wwwroot/about" />
-    <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/contact/index.html" />
-    <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/about/index.html" />
-    <MakeDir Directories="$(PublishDir)wwwroot/cv" Condition="'$(ShowCv)' == 'true'" />
-    <Copy SourceFiles="$(PublishDir)wwwroot/index.html" DestinationFiles="$(PublishDir)wwwroot/cv/index.html" Condition="'$(ShowCv)' == 'true'" />
-    <!-- Remove stale public files when publishing over an earlier output. -->
-    <Delete Files="$(PublishDir)wwwroot/cv/index.html" Condition="'$(ShowCv)' != 'true'" />
-    <Delete Files="$(PublishDir)wwwroot/files/Corey-Hiom-CV.pdf" Condition="'$(ShowCv)' != 'true' Or '$(ShowCvDownload)' != 'true'" />
-    <RemoveDir Directories="$(PublishDir)wwwroot/cv" Condition="'$(ShowCv)' != 'true'" />
+    <Exec Command="dotnet &quot;$(TargetPath)&quot; --source &quot;$(MSBuildProjectDirectory)/wwwroot&quot; --output &quot;$(PublishDir)wwwroot&quot;" WorkingDirectory="$(MSBuildProjectDirectory)" />
   </Target>
 </Project>

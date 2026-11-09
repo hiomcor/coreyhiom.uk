@@ -2,6 +2,11 @@ namespace CoreyHiom;
 
 public static class SiteVisibility
 {
+#if SHOW_PROJECTS
+    public static bool ShowProjects => true;
+#else
+    public static bool ShowProjects => false;
+#endif
 #if SHOW_CV_DOWNLOAD
     public static bool ShowCvDownload => true;
 #else
