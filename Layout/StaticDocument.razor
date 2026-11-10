@@ -9,7 +9,12 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="preload" href="fonts/paytone-one-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="preload" href="fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link rel="stylesheet" href="@($"css/app.css?v={CssVersion}")" />
+    @if (SiteVisibility.ShowProjects && PagePath == "/")
+    {
+        <link rel="stylesheet" href="css/projects.css" />
+    }
 </head>
 <body>
     <a class="skip-link" href="@(PagePath + "#main")">Skip to content</a>
